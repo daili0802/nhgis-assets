@@ -4,10 +4,11 @@ services:
     image: mpc-docker.artifactory.umn.edu/nhgis-assets:${IMAGE_TAG}
     restart: unless-stopped
     volumes:
-      - nhgis_htdocs:/mysecurelocation
-volumes:
-  nhgis_htdocs:
-    driver_opts:
-      type: "nfs"
-      o: "addr=rds01.storage.umn.edu,ro"
-      device: ":/isrdi_nhgis/assets.nhgis.org/htdocs"
+      - ./nhgis_htdocs:/mysecurelocation
+#      - nhgis_htdocs:/mysecurelocation
+#volumes:
+#  nhgis_htdocs:
+#    driver_opts:
+#      type: "nfs"
+#      o: "addr=rds01.storage.umn.edu,ro"
+#      device: ":/isrdi_nhgis/assets.nhgis.org/htdocs"
