@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "opstestcluster-52d7"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "opstestcluster-52d7"
+  template:
+    metadata:
+      labels:
+        app: "opstestcluster-52d7"
+    spec:
+      containers:
+        - name: "opstestcluster-52d7"
+          image: "opsarc.azurecr.io/opstestcluster"
+          ports:
+          - containerPort: 80
