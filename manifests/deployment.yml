@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "opstestcluster-2f5a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "opstestcluster-2f5a"
+  template:
+    metadata:
+      labels:
+        app: "opstestcluster-2f5a"
+    spec:
+      containers:
+        - name: "opstestcluster-2f5a"
+          image: "opsarc.azurecr.io/opstestcluster"
+          ports:
+          - containerPort: 80
